@@ -65,13 +65,11 @@
 	viewer.setFOV(90);
 	viewer.setPointBudget(2000000);
 	viewer.setBackground("skybox");
-
-	let listData = await fetch('list.json');
-	let listJson = await listData.json(); 
-	viewer.setClassifications( listJson.pcs[3].classes );
+    viewer.setDescription(  pc.replace("/metadata.json") ); 
 
 	viewer.loadGUI(() => {
 		viewer.setLanguage('en');
+        $("#menu_simple").hide()
 		$("#menu_tools").next().show();
 		viewer.setControls( viewer.earthControls )
 		viewer.toggleSidebar();

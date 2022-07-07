@@ -50,6 +50,21 @@ Potree.loadPointCloud(antw_pc.meta , antw_pc.name , e => {
     viewer.setClassificationVisibility(1,0);
     viewer.scene.addPointCloud(pointcloud);
 
+    document.getElementById("visu1").addEventListener('change', () =>{
+        if( document.getElementById("visu1").checked) {
+            pointcloud.material.activeAttributeName = 'rgba';
+            for (let prop in viewer.classifications){
+                viewer.setClassificationVisibility(prop,1);
+            }
+        } 
+    });
+    document.getElementById("visu2").addEventListener('change', () =>{
+        if( document.getElementById("visu2").checked) {
+            viewer.setClassificationVisibility(1,0);
+            pointcloud.material.activeAttributeName = 'classification';
+        } 
+    });
+
     // Annotations of points in local coordinates.
     initAnnotations(viewer.scene, list_pcl.pcs);
 
@@ -71,7 +86,7 @@ Potree.loadPointCloud(muur_pc.meta , muur_pc.name , e => {
     let labelXYZ = [152239,213171, 10];
     let title = "Loodswezen gebouw"
     let cameraXYZ = [152237,213180, 50];
-    let description = "Opgraving nabij voormalig loodswezen gebouw, zoom in op om te zien"
+    let description = "Opgraving nabij voormalig loodswezen gebouw, klik hier om te zoomen"
     let anno = new Potree.Annotation({position: labelXYZ, cameraPosition: cameraXYZ, cameraTarget: labelXYZ, title: title, description: description });
     viewer.scene.annotations.add(anno);
 });
