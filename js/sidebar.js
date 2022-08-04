@@ -3,7 +3,7 @@ export async function viewInit(meshes){
     viewer.loadGUI(() => {
         viewer.toggleSidebar();
         $("#menu_simple").next().show();
-
+        $("#menu_filters").hide();
     });
 
  // Add entries for the meshes to object list in sidebar

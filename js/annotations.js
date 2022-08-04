@@ -1,8 +1,7 @@
 export async function initAnnotations(scene, list_pcl) {
-    console.log(list_pcl)
     {
-        let xyz = [155138.4,210863.7, 50];
-        let cameraXYZ = [155684.7,211530.4, 700];
+        let xyz = [154182.5,209123.9, 50];
+        let cameraXYZ = [154166.1,209343.0, 700];
         let title = _titleTempl(  list_pcl[0].name ,  list_pcl[0].url );
         let description = `Een korte beschrijving van deze opgraving, 
         <a target="_blank" href="${list_pcl[1].url}">hyperlinks</a> 
@@ -12,9 +11,9 @@ export async function initAnnotations(scene, list_pcl) {
     
     }
     {
-        let xyz = [149663.1, 210147.2, 50];
+        let xyz = [151693.4,211793.2, 50];
         let title = _titleTempl( list_pcl[2].name , list_pcl[2].url );
-        let cameraXYZ = [149253.6, 210661.7, 700];
+        let cameraXYZ = [151630.93,211818.31, 700];
         let description = `Een korte beschrijving van deze opgraving, 
         <a target="_blank" href="${list_pcl[2].url}">hyperlinks</a> 
         en <b>html</b> mogen.`

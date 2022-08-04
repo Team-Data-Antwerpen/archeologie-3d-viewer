@@ -71848,7 +71848,8 @@ void main() {
 					mousePositionControl
 				]),
 				layers: [
-					new ol.layer.Tile({source: new ol.source.OSM()}),
+					new ol.layer.Tile({source: new ol.source.XYZ({
+	                     url: "https://tiles.arcgis.com/tiles/1KSVSmnHT2Lw9ea6/arcgis/rest/services/basemap_stadsplan_v5/MapServer/tile/{z}/{y}/{x}", maxZoom: 19 })}),
 					this.toolLayer,
 					this.annotationsLayer,
 					this.sourcesLayer,

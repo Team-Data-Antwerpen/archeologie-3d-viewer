@@ -1,8 +1,9 @@
 
 import * as THREE  from "../libs/three.js/build/three.module.js";
-import {drcload} from "./tree_utils.js"
-import {initAnnotations} from "./annotations.js"
-import {viewInit} from './sidebar.js'
+import {drcload} from "./tree_utils.js";
+import {initAnnotations} from "./annotations.js";
+import {viewInit} from './sidebar.js';
+import {setBestControl} from './general_utils.js';
 
 // load meshes
 const listData = await fetch('list.json');
@@ -23,7 +24,7 @@ viewer.setEDLEnabled(true);
 viewer.setFOV(60);
 viewer.setPointBudget(2_000_000);
 viewer.loadSettingsFromURL();
-viewer.setControls( viewer.earthControls) //viewer.orbitControls);
+setBestControl();
 viewer.compass.setVisible(1)
 viewer.setDescription("Draaien met rechtse muis ingdrukt houden, slepen met linkse muis, zoomen met muiswiel.");
 viewer.setClassifications( antw_pc.classes );

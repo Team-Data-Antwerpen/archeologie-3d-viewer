@@ -35,7 +35,7 @@
 	</div> 
 
 	<script type="module">
-	import * as THREE  from "../libs/three.js/build/three.module.js";
+    import {setBestControl} from "./js/general_utils.js"
 
 	const baseUri = "https://s3-ant1.antwerpen.be/acc-laserscans/data/"
 	const urlParams = new URLSearchParams(window.location.search);
@@ -71,7 +71,8 @@
 		viewer.setLanguage('en');
         $("#menu_simple").hide()
 		$("#menu_tools").next().show();
-		viewer.setControls( viewer.earthControls )
+		//viewer.setControls( viewer.earthControls )
+        setBestControl()
 		viewer.toggleSidebar();
 	});
 
