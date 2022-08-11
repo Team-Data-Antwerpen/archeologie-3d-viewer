@@ -1,8 +1,11 @@
+import {geocoder, completer} from './geocoder.js'
+
 export async function viewInit(meshes){
  //Sidabar
     viewer.loadGUI(() => {
         viewer.toggleSidebar();
         $("#menu_simple").next().show();
+        $("#search_simple").next().show();
         $("#menu_filters").hide();
     });
 
@@ -30,6 +33,20 @@ export async function viewInit(meshes){
             tree.jstree(mesh.visible ? "check_node" : "uncheck_node", vecID);
         });
 
+        let a_search = document.getElementById("a_search");
+        a_search.addEventListener("keyup", event => {
+            if (event.key === "Enter") {
+                geocoder(  a_search.value)
+            }
+            });
+
+        $( "#a_search" ).autocomplete({
+            source: ( request, response ) => {
+                completer(request.term, response )
+            },
+            minLength: 2,
+            select: (_, i) =>  geocoder(i.item.value)
+          });
+
     });
-    
 }

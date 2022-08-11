@@ -4,7 +4,21 @@
         <img src="./img/a-logo.svg" style="height: 60px;  float: left; margin-right: 12px;">
        <h2> 3D Laserscans archeologische opgravingen. </h2>
     </div>
+
 	<div id="potree_menu" class="accordion">
+        <h3 id="search_simple">Zoek</h3>
+		<div>
+            <ul class="pv-menu-list">
+                <li>
+                    <label for="adres_search">Een adres zoeken in antwerpen</label>
+                </li>
+                <li>
+                    <input type="search" size="33"
+                            id="a_search" name="a_search" placeholder="straatnaam (huisnummer)" >
+                </li>
+            </ul>
+		</div>
+
 		<!-- SIMPLE MENU -->
 		<h3 id="menu_simple">Basis menu</h3>
 		<div>
@@ -30,7 +44,7 @@
 		</div>
 		
 		<!-- APPEARANCE -->
-		<h3 id="menu_appearance"><span data-i18n="tb.rendering_opt"></span></h3>
+		<h3 id="menu_appearance">Instellingen</h3>
 		<div>
 			<ul class="pv-menu-list">
 				<li><span data-i18n="appearance.nb_max_pts"></span>: <span id="lblPointBudget"></span> <div id="sldPointBudget"></div></li>
@@ -173,23 +187,27 @@
 		</div>
 		
 		<!-- ABOUT -->
-		<h3 id="menu_about"><span data-i18n="tb.about_opt"></span></h3>
+		<h3 id="menu_about">Over</span></h3>
+
 		<div>
 			<ul class="pv-menu-list">
-				<li><a href="http://potree.org" target="_blank">Potree</a> is a viewer for large point cloud / LIDAR data sets, developed at the Vienna University of Technology. 
+                <li>Deze viewer is gebasserd op potree: </li>
+				<li><a href="http://potree.org" target="_blank">Potree</a> is een viewer voor grote puntenwolk / LIDAR-datasets, ontwikkeld aan de Vienna University of Technology. 
 				<a href="https://github.com/potree/potree" target="_blank">(github)</a>
 				</li>
-				<li><b>Author: </b><a href="mailto:mschuetz@potree.org">Markus Sch&uuml;tz</a></li>
+				<li><b>Auteur: </b><a href="mailto:mschuetz@potree.org">Markus Sch&uuml;tz</a></li>
 				<li><b>License: </b><a target="_blank" href="https://github.com/potree/potree/blob/develop/LICENSE/">FreeBSD (2-clause BSD)</a></li>
 				<li><b>Dependency Licenses:</b> <a target="_blank" href="https://github.com/potree/potree/tree/develop/libs/">See github</a></li>
 
 <li>
-<b>Funding:</b>
-Potree is funded by a combination of research projects, companies, institutions and individuals. If you're making good use of Potree, please consider funding its future development <a href="https://github.com/sponsors/potree">via Github Sponsors</a> or by directly inquiring <a href="mailto:mschuetz@potree.org">via e-mail</a>.
+<b>Financiering:</b>
+Potree wordt gefinancierd door een combinatie van onderzoeksprojecten, bedrijven, instellingen en particulieren. 
+Als je Potree gebruikt, overweeg dan om de toekomstige ontwikkeling ervan te financieren, dit kan  
+door rechtstreeks contact op te nemen via e-mail. <a href="mailto:mschuetz@potree.org">mschuetz@potree.org</a>.
 
 <br>
 <br>
-Research projects who's funding contributes to Potree:
+Onderzoeksprojecten waarvan de financiering bijdraagt aan Potree:e:
 
 <table>
 	<tr>
@@ -215,7 +233,7 @@ Research projects who's funding contributes to Potree:
 </table>
 
 <br>
-Thanks to all the companies and institutions funding Potree:
+Met dank aan alle bedrijven en instellingen die Potree financieren:
 
 <table style="width: 100%; text-align: center;">
 	<tr>

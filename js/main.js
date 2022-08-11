@@ -9,7 +9,7 @@ import {setBestControl} from './general_utils.js';
 const listData = await fetch('list.json');
 const list_pcl = await listData.json(); 
 const buildings = new THREE.Group();
-const brug = drcload( list_pcl.brug,  0xff00ff, 0,1);
+const brug = drcload( list_pcl.brug,  0x908096, 0,1);
 
 list_pcl.building.forEach( drc => {
     let mesh = drcload(  drc,  0xff0000, 0, 1);
@@ -49,6 +49,8 @@ Potree.loadPointCloud(antw_pc.meta , antw_pc.name , e => {
     material.opacity = 0.5
     material.activeAttributeName = "classification";
     viewer.setClassificationVisibility(1,0);
+    viewer.setClassificationVisibility(6,0);
+    viewer.setClassificationVisibility('DEFAULT',0);
     viewer.scene.addPointCloud(pointcloud);
 
     document.getElementById("visu1").addEventListener('change', () =>{
@@ -62,6 +64,8 @@ Potree.loadPointCloud(antw_pc.meta , antw_pc.name , e => {
     document.getElementById("visu2").addEventListener('change', () =>{
         if( document.getElementById("visu2").checked) {
             viewer.setClassificationVisibility(1,0);
+            viewer.setClassificationVisibility(6,0);
+            viewer.setClassificationVisibility('DEFAULT',0);
             pointcloud.material.activeAttributeName = 'classification';
         } 
     });
