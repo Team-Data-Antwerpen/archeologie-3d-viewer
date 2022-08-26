@@ -256,7 +256,7 @@
 		"id": 1,
         "name": "Opgraving 1",
         "meta": "https://s3-ant1.antwerpen.be/acc-laserscans/data/pointclouds/put/metadata.json",
-        "url": "./viewer.html?pc=put/metadata.json",
+        "url":  "./viewer.html?pc=put/metadata.json",
         "classes":{ 
         "0": {
             "visible": 1,

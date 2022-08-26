@@ -13,7 +13,7 @@ from boto3.s3.transfer import TransferConfig
 #   pip install boto3, pyyaml
 
 # SECRETS ophalen
-paswd_file = os.path.join( r'F:"path/to/secrets' , 'config.yml')
+paswd_file = os.path.join( r'F:\secrets' , 'config.yml')
 with open(paswd_file) as f:
     pass_dict = yaml.safe_load(f)
 

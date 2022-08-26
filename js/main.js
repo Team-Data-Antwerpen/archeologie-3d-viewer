@@ -5,14 +5,16 @@ import {initAnnotations} from "./annotations.js";
 import {viewInit} from './sidebar.js';
 import {setBestControl} from './general_utils.js';
 
+const LIST_URL = 'https://s3-ant1.antwerpen.be/prod-laserscans/list.json'
+
 // load meshes
-const listData = await fetch('list.json');
+const listData = await fetch("list.json");
 const list_pcl = await listData.json(); 
 const buildings = new THREE.Group();
 const brug = drcload( list_pcl.brug,  0x908096, 0,1);
 
 list_pcl.building.forEach( drc => {
-    let mesh = drcload(  drc,  0xff0000, 0, 1);
+    let mesh = drcload(  drc,  0x918c8c, 0, 1);
     buildings.add(mesh);
 });
 const antw_pc= list_pcl.pcs[4];
@@ -33,10 +35,10 @@ viewer.setClassifications( antw_pc.classes );
 viewInit({"Gebouwen": buildings, "Bruggen": brug});
 
 // lights
-const dirLight1 = new THREE.DirectionalLight( 0xffffff );
+const dirLight1 = new THREE.DirectionalLight( 0x888888 );
 dirLight1.position.set( 1, 1, 1 );
 viewer.scene.scene.add( dirLight1 );
-const ambientLight = new THREE.AmbientLight( 0x777777 );
+const ambientLight = new THREE.AmbientLight( 0x888888 );
 viewer.scene.scene.add( ambientLight );
 
 // load antwerpen
