@@ -8,7 +8,7 @@ import {setBestControl} from './general_utils.js';
 const LIST_URL = 'https://s3-ant1.antwerpen.be/prod-laserscans/list.json'
 
 // load meshes
-const listData = await fetch("list.json");
+const listData = await fetch(LIST_URL);
 const list_pcl = await listData.json(); 
 const buildings = new THREE.Group();
 const brug = drcload( list_pcl.brug,  0x908096, 0,1);

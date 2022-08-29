@@ -26,13 +26,12 @@ async function searchVL( qry, city='Antwerpen', limit=1){
 }
 
 function _make_anno(xyz, title, info){
-        let scene = viewer.scene;
         let cameraXYZ = [xyz[0] +100, xyz[1], 200];
         let anno = new Potree.Annotation({
             position: xyz, cameraPosition: cameraXYZ, cameraTarget: xyz, title: title, description: info });
-        scene.annotations.add(anno);
+        viewer.scene.annotations.add(anno);
         anno.moveHere();
-        setTimeout( ()=> scene.removeAnnotation(anno) , 5000 );
+        setTimeout( ()=> viewer.scene.removeAnnotation(anno) , 5000 );
     }
 
 async function geocoder( query ){

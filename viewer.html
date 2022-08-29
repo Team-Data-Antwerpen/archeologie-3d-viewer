@@ -38,47 +38,27 @@
 	<script type="module">
     import {setBestControl} from "./js/general_utils.js"
 
-	const baseUri = "https://s3-ant1.antwerpen.be/acc-laserscans/data/"
+	const baseUri = "https://s3-ant1.antwerpen.be/prod-laserscans/data/"
 	const urlParams = new URLSearchParams(window.location.search);
-	let defaultpc =  "put/metadata.json"
+	let defaultpc =  "put"
 	let pc = urlParams.get('pc') == null ? defaultpc : urlParams.get('pc');
 
 	window.viewer = new Potree.Viewer(document.getElementById("potree_render_area"));
-
-    viewer.setClassifications( { 
-        "0": {
-            "visible": 1,
-            "name": "niet ingedeeld",
-            "color": [0.3,0.3,0.3,1]
-        } ,
-        "1": {
-            "visible": 1,
-            "name": "onbekend",
-            "color": [0.5,0.5,0.5,1]
-        } ,
-        "2": {
-            "visible": 1,
-            "name": "grond",
-            "color": [0.63,0.32,0.18,1]
-        }} );
 
 	viewer.setEDLEnabled(true);
 	viewer.setFOV(90);
 	viewer.setPointBudget(2000000);
 	viewer.setBackground("skybox");
-    viewer.setDescription(  pc.replace("/metadata.json") ); 
 
 	viewer.loadGUI(() => {
 		viewer.setLanguage('en');
         $("#menu_simple").hide()
         $("#search_simple").hide()
 		$("#menu_tools").next().show();
-		//viewer.setControls( viewer.earthControls )
         setBestControl()
-		viewer.toggleSidebar();
 	});
 
-	Potree.loadPointCloud( baseUri + "pointclouds/" + pc , pc.replace("/metadata.json"), e => {
+	Potree.loadPointCloud( baseUri + pc + "/metadata.json" , pc, e => {
 		let scene = viewer.scene;
 		window.pointcloud = e.pointcloud;
 		let material = pointcloud.material;

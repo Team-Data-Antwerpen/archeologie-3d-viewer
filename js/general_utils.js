@@ -7,9 +7,11 @@ let mobiletCheck = () => {
   };
 
 let setBestControl = () => {
-    viewer.setControls( viewer.earthControls)
     if(mobiletCheck()){
-        viewer.setControls( viewer.orbitControls )
+        viewer.setControls( viewer.orbitControls );
+    }
+    else{
+        viewer.setControls( viewer.earthControls);
     }
 };
 

@@ -235,7 +235,7 @@
 		"id": 0,
         "name": "Burchtmuur",
         "meta": "https://s3-ant1.antwerpen.be/acc-laserscans/data/pointclouds/burchtmuur/metadata.json",
-        "url": "./viewer.html?pc=burchtmuur/metadata.json",
+        "url": "./viewer.html?pc=burchtmuur",
         "classes":{ 
         "0": {
             "visible": 1,
@@ -256,7 +256,7 @@
 		"id": 1,
         "name": "Opgraving 1",
         "meta": "https://s3-ant1.antwerpen.be/acc-laserscans/data/pointclouds/put/metadata.json",
-        "url":  "./viewer.html?pc=put/metadata.json",
+        "url":  "./viewer.html?pc=put",
         "classes":{ 
         "0": {
             "visible": 1,
@@ -277,7 +277,7 @@
 		"id": 2,
         "name": "Scheldekaaien",
         "meta": "https://s3-ant1.antwerpen.be/acc-laserscans/data/pointclouds/scheldekaaien/metadata.json",
-        "url":  "./viewer.html?pc=scheldekaaien/metadata.json",
+        "url":  "./viewer.html?pc=scheldekaaien",
         "classes":{ 
         "0": {
             "visible": 1,
@@ -298,7 +298,7 @@
 		"id": 3,
         "name": "Loodswezen",
         "meta": "https://s3-ant1.antwerpen.be/acc-laserscans/data/pointclouds/muur/metadata.json",
-        "url": "./viewer.html?pc=muur/metadata.json", 
+        "url": "./viewer.html?pc=muur", 
         "classes":{
         "0": {
             "visible": 1,
